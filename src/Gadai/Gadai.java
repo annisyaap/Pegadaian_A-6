@@ -5,19 +5,22 @@ import java.util.Scanner;
 
 public class Gadai {
 
+	public static Scanner input;
+
 	public Gadai() {
 		// TODO Auto-generated constructor stub
 	}
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		Scanner input = new Scanner(System.in);
+		input = new Scanner(System.in);
 		System.out.println("Detail Information\n"
 				+ "===================================");
 		
 		ArrayList<Nasabah> arrNasabah = new ArrayList<>();
 		
-		String namaNasabah, katProduk, deskripsiProduk, hargaProduk;
+		String namaNasabah, katProduk, deskripsiProduk;
+		int hargaProduk;
+		
 		do {
 			System.out.print("Name\t\t\t: ");
 			namaNasabah = input.nextLine();
@@ -30,14 +33,16 @@ public class Gadai {
 		
 		do {
 			System.out.print("Description\t\t: ");;
-			deskripsi = input.nextLine();
-		} while(!deskripsi.contains(" "));
+			deskripsiProduk = input.nextLine();
+		} while(!deskripsiProduk.contains(" "));
 		
-			
 		do{
-			System.out.println("Price\t\t\t: ");
+			System.out.print("Price\t\t\t: ");
+			hargaProduk = input.nextInt();
+		} while (hargaProduk%10000!=0);
 		
-		} while ();
+		
+		
 	}
 
 }
