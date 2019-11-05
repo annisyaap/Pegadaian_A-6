@@ -1,9 +1,7 @@
-//package tugas1;
+package Gadai;
 
 import java.util.ArrayList;
 import java.util.Scanner;
-
-import java.util.ArrayList;
 
 public class MainClass {
 
@@ -14,6 +12,7 @@ public class MainClass {
 		ArrayList<Transaksi> arrTransaksi = new ArrayList<>();
 		Scanner d = new Scanner(System.in);
 		int pil;
+		do{
 		do{
 			System.out.println("\n==========================================");
 			System.out.println("================PEGADAIAN=================");
@@ -72,7 +71,7 @@ public class MainClass {
 				} while (hargaProduk%10000!=0);
 				
 				status = "Gadai";
-				int incrementID = 0;
+				int incrementID = arrTransaksi.size();
 				
 				
 //				arrNasabah.add(new Nasabah(namaNasabah));				
@@ -95,11 +94,8 @@ public class MainClass {
 				
 				
 				for (Transaksi n : arrTransaksi) {
-					if (n.status == "gadai") {
-						
 						String print = String.format("%5s %12s %12s %12s", n.agunan.id, n.agunan.kategoriProduk, n.status, n.hutang);
 						System.out.println (print);
-					}
 				}
 				
 				// Masukkan ID yang ingin ditebus
@@ -120,8 +116,12 @@ public class MainClass {
 				int jumlah = d.nextInt();
 				
 				//METHOD MENGURANGI HUTANG DENGAN JUMLAH YANG DIBAYAR
+				if(arrTransaksi.get(indexArrayListTransaksi).hutang==0){
+					System.out.println("Agunan sudah ditebus nih! Pilih agunan lain");
+					continue;
+				}else{
 				arrTransaksi.get(indexArrayListTransaksi).bayarHutang(jumlah);
-				
+				}
 				// Display table header
 				System.out.println ("====================================================");
 				String displayHeader2 = String.format("%5s %12s %12s %12s", "ID", "Kategori", "Status" , "Hutang");		
@@ -136,16 +136,26 @@ public class MainClass {
 
 			}
 			else if(pil==3){
+				System.out.println ("========================================================================");
+				System.out.printf(  "%5s %18s %10s %16s %10s", "ID", "Nama", "Product", "Description", "Price");
+				System.out.println ("\n========================================================================");
+					for (Transaksi t1: arrTransaksi) {
+						if(t1.status== "gadai") {
+							System.out.printf(  "\n%5s %18s %10s %16s %10s",t1.agunan.id,t1.nasabah.namaNasabah,t1.agunan.kategoriProduk,t1.agunan.deskripsiProduk ,t1.hutang);
+					}
+				
+				}
 
 			}
-			else if(pil==48){
+			else if(pil==4){
 				System.out.println("\n====== EXIT ======");
 				break;
 			}
 			
 			System.out.println("\n\n");
 			
-		}while(pil>=1 && pil < 4);
+		}while(pil>=1 && pil <=4);
+		}while(pil<1 || pil >4);
 		
 	}
 }

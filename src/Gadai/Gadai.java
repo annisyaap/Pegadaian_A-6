@@ -1,4 +1,4 @@
-//package Gadai;
+package Gadai;
 
 import java.util.ArrayList;
 import java.util.Scanner;

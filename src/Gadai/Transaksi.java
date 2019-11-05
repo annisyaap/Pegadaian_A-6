@@ -1,4 +1,4 @@
-//package tugas1;
+package Gadai;
 
 public class Transaksi {
 	Agunan agunan;
@@ -17,6 +17,9 @@ public class Transaksi {
 	//method  mengurangi hutang set this hutang = hutang - jumlah bayar
 	public void bayarHutang (int jumlah) {
 		this.hutang = this.hutang - jumlah;
+		if(this.hutang == 0){
+			this.status = "lunas";
+		}
 	}
 	
 }
