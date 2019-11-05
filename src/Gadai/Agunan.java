@@ -5,17 +5,11 @@ public class Agunan {
 	String kategoriProduk;
 	String deskripsiProduk;
 	int harga;
-	
 	public Agunan(int id, String kategoriProduk, String deskripsiProduk, int harga) {
-		this.id = id;
+		this.id= id;
 		this.kategoriProduk = kategoriProduk;
 		this.deskripsiProduk = deskripsiProduk;
 		this.harga = harga;
-	}
-
-	
-	public int getId() {
-		return id;
 	}
 
 	public String getKategoriProduk() {
@@ -28,6 +22,10 @@ public class Agunan {
 
 	public int getHarga() {
 		return harga;
+	}
+
+	public int getId() {
+		return id;
 	}
 
 	public void setId(int id) {

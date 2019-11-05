@@ -1,51 +1,28 @@
 package Gadai;
-import java.util.Scanner;
+
+import java.util.ArrayList;
 
 public class MainClass {
 
-	
-	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		String namaProduk;
-		String kategoriProduk;
-		String deskripsiProduk;
-		String namaNasabah;
-		int harga;
-			Scanner d = new Scanner(System.in);
-			int pil;
-			do{
-				System.out.println("\n==========================================");
-				System.out.println("================PEGADAIAN=================");
-				System.out.println("\n1. Gadai ");
-				System.out.println("2. Tebus ");
-				System.out.println("3. Tampilkan Inventory ");
-				System.out.println("4. Exit ");
-				System.out.println("==========================================");
-				System.out.println("Pilihan Menu : ");
-
-				pil = d.nextInt();
-				
-				if(pil==1) {
-
-
-				}
-				else if(pil==2){
-
-				}
-				else if(pil==3){
-
-				}
-				else if(pil==48){
-					System.out.println("\n====== EXIT ======");
-					break;
-				}
-				
-				System.out.println("\n\n");
-				
-			}while(pil< 1 || pil > 4);
-
+		// Tampilkan Inventory
+		ArrayList<Agunan> a = new ArrayList<>();
+		ArrayList<Nasabah> n = new ArrayList<>();
+		ArrayList<Transaksi> t = new ArrayList<>();
+		
+		String status="", kategoriProduk = "", deskripsiProduk = "";
+		int hutang=0,id=0,harga = 0;
+		
+		a.add(new Agunan(id,kategoriProduk, deskripsiProduk, harga));
+		t.add(new Transaksi(a.get(0),n.get(0),status,hutang));
+		
+		System.out.println("----------------------------------------------------------------------");
+		System.out.println("| ID |       Nama       |  Product  |       Description    |  Price  |");
+		System.out.println("----------------------------------------------------------------------");
+		for (Transaksi t1:t) {
+			System.out.println("|  " +a.get(0) + "  |         "+t.get(1)+ "\t|  "+a.get(1)+"  |       "+a.get(2) +"    |  "+t.get(3)+"  |");
 		}
+	}
+
 }
-
-
