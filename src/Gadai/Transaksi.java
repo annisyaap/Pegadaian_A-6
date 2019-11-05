@@ -1,13 +1,13 @@
-package Gadai;
+package tugas1;
 
 public class Transaksi {
 	Agunan agunan;
 	Nasabah nasabah;
 	String status;
-	double hutang;
+	int hutang;
 	
 	//method gadai langsung pada saat init constructor
-	public Transaksi(Agunan agunan, Nasabah nasabah, String status, double hutang) {
+	public Transaksi(Agunan agunan, Nasabah nasabah, String status, int hutang) {
 		this.agunan = agunan;
 		this.nasabah = nasabah;
 		this.status = status;
@@ -15,8 +15,8 @@ public class Transaksi {
 	}	
 	
 	//method  mengurangi hutang set this hutang = hutang - jumlah bayar
-	public void bayarHutang () {
-		
+	public void bayarHutang (int jumlah) {
+		this.hutang = this.hutang - jumlah;
 	}
 	
 }
