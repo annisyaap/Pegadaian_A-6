@@ -26,31 +26,39 @@ public class Gadai {
 			System.out.print("Product Category\t: ");
 			katProduk = input.nextLine();
 		} while(!katProduk.equalsIgnoreCase("Laptop") && !katProduk.equalsIgnoreCase("Motor") && !katProduk.equalsIgnoreCase("Emas"));
-		
+
 		do {
 			System.out.print("Description\t\t: ");
 			deskripsiProduk = input.nextLine();
 			
-			String jmlhKar[] = new String[deskripsiProduk.length()];
-			for (int i = 0; i < jmlhKar.length; i++) {
-				jmlhKar[i]= Character.toString(deskripsiProduk.charAt(i));
-			}		
+//			String jmlhKar[] = new String[deskripsiProduk.length()];
+//			for (int i = 0; i < jmlhKar.length; i++) {
+//				jmlhKar[i]= Character.toString(deskripsiProduk.charAt(i));
+//			}
+//			
+//			for (int i = 0; i < jmlhKar.length+1; i++) {
+//				if (jmlhKar[0].contains(" ")){
+//					break;
+//				} else if(jmlhKar[jmlhKar.length-1].contains(" ")){
+//					break;
+//				} 
+////				else if(i > 0 || i < jmlhKar.length-1 ){
+////					break;
+////				}
+//				break;				
+//			}
 			
-			for (int i = 0; i < jmlhKar.length+1; i++) {
-				if (jmlhKar[0].contains(" ") || jmlhKar[jmlhKar.length-1].contains(" ") ){
-					System.out.print("Description\t\t: ");
-					deskripsiProduk = input.nextLine();
-				} 
-				else if(jmlhKar[i].contains(" ")){
-					break;
-				} 
-				break;
-			}
 		} while(!deskripsiProduk.contains(" "));
 		
+		hargaProduk = 0;
 		do{
-			System.out.print("Price\t\t\t: ");
-			hargaProduk = input.nextDouble();
+			try {
+				System.out.print("Price\t\t\t: ");
+				hargaProduk = input.nextDouble();
+			} catch (Exception e) {
+				// TODO: handle exception
+				System.out.println("Nilai yang dimasukkan harus angka.");
+			}
 		} while (hargaProduk%10000!=0);
 		
 		status = "Gadai";
