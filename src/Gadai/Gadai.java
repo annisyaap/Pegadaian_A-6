@@ -5,18 +5,16 @@ import java.util.Scanner;
 
 public class Gadai {
 
-	public static Scanner input;
-
 	public Gadai() {
 		// TODO Auto-generated constructor stub
 	}
 
 	public static void main(String[] args) {
-		input = new Scanner(System.in);
-		System.out.println("Detail Information\n"
+		Scanner input = new Scanner(System.in);
+		System.out.println("\nDetail Information\n"
 				+ "==========================================");
 
-		String namaNasabah, katProduk, deskripsiProduk;
+		String namaNasabah, katProduk, deskripsiProduk, status;
 		double hargaProduk;
 		
 		do {
@@ -30,8 +28,24 @@ public class Gadai {
 		} while(!katProduk.equalsIgnoreCase("Laptop") && !katProduk.equalsIgnoreCase("Motor") && !katProduk.equalsIgnoreCase("Emas"));
 		
 		do {
-			System.out.print("Description\t\t: ");;
+			System.out.print("Description\t\t: ");
 			deskripsiProduk = input.nextLine();
+			
+			String jmlhKar[] = new String[deskripsiProduk.length()];
+			for (int i = 0; i < jmlhKar.length; i++) {
+				jmlhKar[i]= Character.toString(deskripsiProduk.charAt(i));
+			}		
+			
+			for (int i = 0; i < jmlhKar.length+1; i++) {
+				if (jmlhKar[0].contains(" ") || jmlhKar[jmlhKar.length-1].contains(" ") ){
+					System.out.print("Description\t\t: ");
+					deskripsiProduk = input.nextLine();
+				} 
+				else if(jmlhKar[i].contains(" ")){
+					break;
+				} 
+				break;
+			}
 		} while(!deskripsiProduk.contains(" "));
 		
 		do{
@@ -39,7 +53,16 @@ public class Gadai {
 			hargaProduk = input.nextDouble();
 		} while (hargaProduk%10000!=0);
 		
+		status = "Gadai";
+		int incrementID = 0;
+		
 		ArrayList<Nasabah> arrNasabah = new ArrayList<>();
+		arrNasabah.add(new Nasabah(namaNasabah));
+		
+		ArrayList<Agunan> arrAgunan = new ArrayList<>();
+		arrAgunan.add(new Agunan((incrementID+1), katProduk, deskripsiProduk, hargaProduk));
+		
+		
 		
 	}
 
