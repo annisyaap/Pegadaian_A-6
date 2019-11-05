@@ -1,20 +1,21 @@
 package Gadai;
 
 public class Agunan {
-	String namaProduk;
+	int id;
 	String kategoriProduk;
 	String deskripsiProduk;
 	int harga;
 	
-	public Agunan(String namaProduk, String kategoriProduk, String deskripsiProduk, int harga) {
-		this.namaProduk = namaProduk;
+	public Agunan(int id, String kategoriProduk, String deskripsiProduk, int harga) {
+		this.id = id;
 		this.kategoriProduk = kategoriProduk;
 		this.deskripsiProduk = deskripsiProduk;
 		this.harga = harga;
 	}
 
-	public String getNamaProduk() {
-		return namaProduk;
+	
+	public int getId() {
+		return id;
 	}
 
 	public String getKategoriProduk() {
@@ -29,8 +30,8 @@ public class Agunan {
 		return harga;
 	}
 
-	public void setNamaProduk(String namaProduk) {
-		this.namaProduk = namaProduk;
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public void setKategoriProduk(String kategoriProduk) {
