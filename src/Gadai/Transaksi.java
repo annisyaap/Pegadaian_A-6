@@ -1,5 +1,7 @@
 package Gadai;
 
+import java.util.ArrayList;
+
 public class Transaksi {
 	Agunan agunan;
 	Nasabah nasabah;
@@ -15,8 +17,7 @@ public class Transaksi {
 	}	
 	
 	//method  mengurangi hutang set this hutang = hutang - jumlah bayar
-	public void bayarHutang () {
-		
-	}
+	public void bayarHutang (int jumlah) {
 	
+	}
 }
