@@ -14,12 +14,10 @@ public class Gadai {
 	public static void main(String[] args) {
 		input = new Scanner(System.in);
 		System.out.println("Detail Information\n"
-				+ "===================================");
-		
-		ArrayList<Nasabah> arrNasabah = new ArrayList<>();
-		
+				+ "==========================================");
+
 		String namaNasabah, katProduk, deskripsiProduk;
-		int hargaProduk;
+		double hargaProduk;
 		
 		do {
 			System.out.print("Name\t\t\t: ");
@@ -38,10 +36,10 @@ public class Gadai {
 		
 		do{
 			System.out.print("Price\t\t\t: ");
-			hargaProduk = input.nextInt();
+			hargaProduk = input.nextDouble();
 		} while (hargaProduk%10000!=0);
 		
-		
+		ArrayList<Nasabah> arrNasabah = new ArrayList<>();
 		
 	}
 
