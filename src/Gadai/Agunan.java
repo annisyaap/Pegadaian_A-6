@@ -4,9 +4,9 @@ public class Agunan {
 	int id;
 	String kategoriProduk;
 	String deskripsiProduk;
-	int harga;
+	double harga;
 	
-	public Agunan(int id, String kategoriProduk, String deskripsiProduk, int harga) {
+	public Agunan(int id, String kategoriProduk, String deskripsiProduk, double harga) {
 		this.id = id;
 		this.kategoriProduk = kategoriProduk;
 		this.deskripsiProduk = deskripsiProduk;
@@ -26,7 +26,7 @@ public class Agunan {
 		return deskripsiProduk;
 	}
 
-	public int getHarga() {
+	public double getHarga() {
 		return harga;
 	}
 
@@ -42,7 +42,7 @@ public class Agunan {
 		this.deskripsiProduk = deskripsiProduk;
 	}
 
-	public void setHarga(int harga) {
+	public void setHarga(double harga) {
 		this.harga = harga;
 	}
 	

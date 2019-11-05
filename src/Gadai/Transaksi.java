@@ -4,10 +4,10 @@ public class Transaksi {
 	Agunan agunan;
 	Nasabah nasabah;
 	String status;
-	int hutang;
+	double hutang;
 	
 	//method gadai langsung pada saat init constructor
-	public Transaksi(Agunan agunan, Nasabah nasabah, String status, int hutang) {
+	public Transaksi(Agunan agunan, Nasabah nasabah, String status, double hutang) {
 		this.agunan = agunan;
 		this.nasabah = nasabah;
 		this.status = status;
